@@ -7,13 +7,29 @@ function addDashes(numString) {
   return "0-254-8-6";
 }
 
+function dash(numString) {
+  var numStringArray = numString.split("");
+  var newNumStringArray = [];
+  for (var i = 0; i < numStringArray.length; i++){
+    if (numStringArray[i] % 2 === 0 && numStringArray[i+1] % 2 === 0) {
+       newNumStringArray[i] = numStringArray[i] + '-';
+    } else { 
+      newNumStringArray[i] = numStringArray[i]
+    }
+   
+  }
+  return newNumStringArray.join('');
+}
+
 assertEquals(addDashes("025486"), "0-254-8-6"); // check that your function works as expected
-// assertEquals(dash('111246777'), '1112-4-6777') // uncomment this and run program. if test passes, uncomment subsequent tests one by one
-// assertEquals(dash('0021100'), '0-0-2110-0')
-// assertEquals(dash('your test input'), 'your expected output') // uncomment this line and add 2-3 more test cases. Do the same for all remaining functions
+assertEquals(dash('111246777'), '1112-4-6777') // uncomment this and run program. if test passes, uncomment subsequent tests one by one
+assertEquals(dash('0021100'), '0-0-2110-0')
+assertEquals(dash('23232323242424'), '232323232-4-2-4-2-4') // uncomment this line and add 2-3 more test cases. Do the same for all remaining functions
 
 /* ---------------------- EXERCISE 2 ---------------------- */
-// Write a Javascript function to find the most frequent item of an array. It should return a string denoting the item and the number of times it occurs in the array. (Sample input: [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3], expected output : 'a (5 times)')
+// Write a Javascript function to find the most frequent item of an array. 
+//It should return a string denoting the item and the number of times it occurs in the array. 
+//(Sample input: [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3], expected output : 'a (5 times)')
 
 function mostFrequentItem(arr) {}
 
